@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+
+  parcer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python ./parcer.py
+    env_file:
+      - ./.env.prod
+    volumes:
+      - ./results:/2gis_docker/results
+      - ./log:/2gis_docker/log
+
+
+
